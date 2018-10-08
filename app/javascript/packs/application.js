@@ -8,3 +8,19 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import '../styles/application'
+
+const setToggleMenuHandler = () =>{
+  document.querySelectorAll('.dropdown').forEach((menu) =>{
+    menu.querySelector('.dropdown-trigger > .button').addEventListener('click',(event) =>{
+      menu.classList.contains('is-active') ? menu.classList.remove('is-active') : menu.classList.add('is-active');
+    })
+  })
+}
+
+const run = ()=>{
+  setToggleMenuHandler();
+}
+
+window.addEventListener('load',()=>{
+  run();
+})

@@ -1,20 +1,36 @@
-<div class='level'>
-  <div class='level-right'>
-    <div class='level-item'>
-      Kaku-tail Uploader
-    </div>
+<div class='navbar'>
+  <div class='navbar-brand'>
+    <%= link_to 'Kaku-tail Uploader', uploaded_files_path, class:'navbar-item'%>
   </div>
-  <div class='level-right'>
-    <div class='level-item'>
-      <% if user_signed_in?	%>
-        <% if current_user.name.empty? %>
-          <%= current_user.email %>としてログイン中
-        <% else %>
-          <%= current_user.name %>としてログイン中
-        <% end %>
-      <% else %>
+  <div class='navbar-end'>
+    <% if user_signed_in?	%>
+      <div class='navbar-item'>
+        <div class="dropdown">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+              <%= current_user.display_name %>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div href="#" class="dropdown-item">
+                <%= link_to t("devise.user_info.edit"), edit_user_registration_path,class: 'dropdown-item' %>
+              </div>
+              <hr class="dropdown-divider">
+              <div href="#" class="dropdown-item">
+                <%= link_to t("devise.sessions.sign_out"), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class='navbar-item'>
+        <%= link_to t("devise.shared.links.sign_up"), new_user_registration_path %>
+      </div>
+      <div class='navbar-item'>
         <%= link_to t("devise.shared.links.sign_in"), new_session_path(resource_name) %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

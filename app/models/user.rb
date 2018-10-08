@@ -29,4 +29,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   has_many :uploaded_file
+
+  def display_name
+    return email if name.empty?
+    name
+  end
 end

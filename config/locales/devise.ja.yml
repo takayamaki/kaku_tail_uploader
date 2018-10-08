@@ -1,0 +1,6 @@
+ja:
+  devise:
+    sessions:
+      sign_out: ログアウト
+    user_info:
+      edit: ユーザ情報の編集
