@@ -1,13 +1,13 @@
 <div class='navbar'>
   <div class='navbar-brand'>
-    <%= link_to 'Kaku-tail Uploader', uploaded_files_path, class:'navbar-item'%>
+    <%= link_to 'Kaku-tail Uploader', uploaded_files_path, class:'navbar-item is-size-3'%>
   </div>
   <div class='navbar-end'>
     <% if user_signed_in?	%>
       <div class='navbar-item'>
-        <div class="dropdown">
+        <div class="dropdown is-right">
           <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <button class="button is-link" aria-haspopup="true" aria-controls="dropdown-menu">
               <%= current_user.display_name %>
             </button>
           </div>
@@ -18,7 +18,7 @@
               </div>
               <hr class="dropdown-divider">
               <div href="#" class="dropdown-item">
-                <%= link_to t("devise.sessions.sign_out"), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                <%= button_to t("devise.sessions.sign_out"), destroy_user_session_path, method: :delete, class: 'dropdown-item button is-fullwidth is-warning' %>
               </div>
             </div>
           </div>
