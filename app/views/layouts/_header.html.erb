@@ -1,0 +1,20 @@
+<div class='level'>
+  <div class='level-right'>
+    <div class='level-item'>
+      Kaku-tail Uploader
+    </div>
+  </div>
+  <div class='level-right'>
+    <div class='level-item'>
+      <% if user_signed_in?	%>
+        <% if current_user.name.empty? %>
+          <%= current_user.email %>としてログイン中
+        <% else %>
+          <%= current_user.name %>としてログイン中
+        <% end %>
+      <% else %>
+        <%= link_to t("devise.shared.links.sign_in"), new_session_path(resource_name) %>
+      <% end %>
+    </div>
+  </div>
+</div>
