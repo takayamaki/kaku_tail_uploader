@@ -1,17 +1,28 @@
-uploaded_files/index
-<table>
-  <tr>
-    <th>ファイル名</th>
-    <th>アップロードしたユーザ</th>
-  </tr>
-<% @uploaded_files.each do |uploaded_file| %>
-  <tr>
-    <td>
-      <%= link_to uploaded_file.file_name, uploaded_file %>
-    </td>
-    <td>
-      <%= uploaded_file.user.display_name %>
-    </td>
-  </tr>
-<%end%>
-</table>
+<div class="container">
+  <table class='table is-fullwidth is-striped'>
+    <thead>
+      <tr>
+        <th>ファイル名</th>
+        <th>アップロード日時</th>
+        <% if current_user.staff? %>
+          <th>アップロードしたユーザ</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @uploaded_files.each do |uploaded_file| %>
+        <tr>
+          <td>
+            <%= link_to uploaded_file.file_name, uploaded_file %>
+          </td>
+          <td>
+            <%= I18n.l(uploaded_file.created_at) %>
+          </td>
+        <% if current_user.staff? %>
+            <td><%= uploaded_file.user.display_name%></td>
+        <% end %>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
