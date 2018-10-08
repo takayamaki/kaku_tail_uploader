@@ -1,3 +1,17 @@
 uploaded_files/index
+<table>
+  <tr>
+    <th>ファイル名</th>
+    <th>アップロードしたユーザ</th>
+  </tr>
 <% @uploaded_files.each do |uploaded_file| %>
+  <tr>
+    <td>
+      <%= link_to uploaded_file.file_name, uploaded_file %>
+    </td>
+    <td>
+      <%= uploaded_file.user.display_name %>
+    </td>
+  </tr>
 <%end%>
+</table>
