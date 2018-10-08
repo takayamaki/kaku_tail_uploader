@@ -19,5 +19,6 @@
 #
 
 class UploadedFile < ApplicationRecord
+  validates :file_name, presence: true
   belongs_to :user
 end
