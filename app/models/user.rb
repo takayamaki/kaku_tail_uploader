@@ -3,15 +3,16 @@
 # Table name: users
 #
 #  id                     :bigint(8)        not null, primary key
-#  name                   :string           default(""), not null
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  name                   :string           default(""), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :integer          default("unauthorized")
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -28,7 +29,20 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
+  enum role: [:unauthorized, :creator, :staff, :host, :admin], _suffix: :role
   has_many :uploaded_file
+
+  def staff?
+    ['admin', 'host', 'staff'].include? role
+  end
+
+  def upgrade_role
+    update! role:([role_before_type_cast + 1, 4].min)
+  end
+
+  def downgrade_role
+    update! role: ([role_before_type_cast - 1, 0].max)
+  end
 
   def display_name
     return email if name.empty?
