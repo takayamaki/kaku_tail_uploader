@@ -2,7 +2,11 @@ class UploadedFilesController < ApplicationController
   include RequireAuthenticateConcern
 
   def index
-    @uploaded_files = UploadedFile.all
+    if current_user.staff?
+      @uploaded_files = UploadedFile.all
+    else
+      @uploaded_files = UploadedFile.uploaded_by(current_user)
+    end
   end
 
   def new

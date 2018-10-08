@@ -21,4 +21,5 @@
 class UploadedFile < ApplicationRecord
   validates :file_name, presence: true
   belongs_to :user
+  scope :uploaded_by, ->(user) {where(user_id: user.id)}
 end
