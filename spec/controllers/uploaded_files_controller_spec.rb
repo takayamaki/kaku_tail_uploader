@@ -4,6 +4,8 @@ describe UploadedFilesController, type: :controller do
   describe "GET #index" do
     subject {get :index}
 
+    let(:unothorized_user) {Fabricate(:user, role: 0)}
+
     let(:creator) {Fabricate(:user, role: 1)}
     let(:uploaded_file_from_creator)  {Fabricate(:uploaded_file, user: creator)}
 
@@ -15,6 +17,14 @@ describe UploadedFilesController, type: :controller do
 
     let(:admin) {Fabricate(:user, role: 4)}
     let(:uploaded_file_from_admin) {Fabricate(:uploaded_file, user: admin)}
+
+    context "unothorized users can not see any files with 403" do
+      before {sign_in(unothorized_user)}
+      it do 
+        subject
+        expect(response).to have_http_status(403)
+      end
+    end
 
     context "creators only can see uploaded files from themself" do
       before {sign_in(creator)}

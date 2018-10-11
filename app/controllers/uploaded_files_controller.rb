@@ -4,6 +4,8 @@ class UploadedFilesController < ApplicationController
   def index
     if current_user.staff?
       @uploaded_files = UploadedFile.all
+    elsif current_user.unauthorized_role?
+      forbidden
     else
       @uploaded_files = UploadedFile.uploaded_by(current_user)
     end
