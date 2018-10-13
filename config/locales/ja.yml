@@ -2,3 +2,8 @@ ja:
   uploaded_files:
     new:
       upload: アップロード
+    index:
+      created_at: アップロード日時
+      file_name: ファイル名
+      upload_form: アップロードする
+      upload_user: アップロードしたユーザ

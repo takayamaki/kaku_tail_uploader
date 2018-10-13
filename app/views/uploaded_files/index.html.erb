@@ -1,11 +1,12 @@
 <div class="container">
+  <%= link_to t('uploaded_files.index.upload_form'), new_uploaded_file_path, class: 'button is-link' %>
   <table class='table is-fullwidth is-striped'>
     <thead>
       <tr>
-        <th>ファイル名</th>
-        <th>アップロード日時</th>
+        <th><%=t('uploaded_files.index.file_name')%></th>
+        <th><%=t('uploaded_files.index.created_at')%></th>
         <% if current_user.staff? %>
-          <th>アップロードしたユーザ</th>
+          <th><%=t('uploaded_files.index.upload_user')%></th>
         <% end %>
       </tr>
     </thead>
