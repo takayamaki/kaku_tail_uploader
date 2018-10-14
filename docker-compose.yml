@@ -1,0 +1,18 @@
+version: "2"
+services:
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+    entrypoint: sh
+    command: -c 'mkdir -p /export/kakutail-store && /usr/bin/minio server /export'
+    environment:
+      - "MINIO_ACCESS_KEY=KAKUTAILDEVELOPMENT"
+      - "MINIO_SECRET_KEY=KAKUTAILDEVELOPMENT"
+  postgresql:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_USER=kaku_tail"
+      - "POSTGRES_PASSWORD=kaku_tail"
