@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :uploaded_files, except: [:edit]
+  mount Shrine.presign_endpoint(:cache) => "/api/presign"
 end
