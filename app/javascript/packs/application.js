@@ -1,19 +1,17 @@
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
-
 import '../styles/application'
 
+const toggleActive = (elm) =>{
+  elm.classList.contains('is-active') ? elm.classList.remove('is-active') : elm.classList.add('is-active');
+}
+
 const setToggleMenuHandler = () =>{
-  document.querySelectorAll('.dropdown').forEach((menu) =>{
-    menu.querySelector('.dropdown-trigger > .button').addEventListener('click',(event) =>{
-      menu.classList.contains('is-active') ? menu.classList.remove('is-active') : menu.classList.add('is-active');
-    })
+  const header = document.getElementById('header')
+  const menu = header.querySelector('.navbar-menu');
+  const burger = header.querySelector('.navbar-brand > .navbar-burger')
+
+  burger.addEventListener('click', ()=>{
+    toggleActive(menu)
+    toggleActive(burger)
   })
 }
 
