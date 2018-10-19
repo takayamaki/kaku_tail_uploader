@@ -13,6 +13,7 @@ class UploadedFilesController < ApplicationController
 
   def new
     @uploaded_file = current_user.uploaded_file.build
+    render layout: 'layouts/upload_form'
   end
 
 

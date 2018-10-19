@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KakuTailUploader</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application' %>
+    <%= javascript_pack_tag 'upload_form' %>
+  </head>
+
+  <body>
+    <%= render partial: "layouts/header" %>
+    <%= yield %>
+  </body>
+</html>
