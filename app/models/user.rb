@@ -32,6 +32,10 @@ class User < ApplicationRecord
   enum role: [:unauthorized, :creator, :staff, :host, :admin], _suffix: :role
   has_many :uploaded_file
 
+  def authorized?
+    !unauthorized_role?
+  end
+
   def staff?
     ['admin', 'host', 'staff'].include? role
   end
