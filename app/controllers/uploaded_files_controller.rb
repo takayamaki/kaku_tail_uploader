@@ -1,5 +1,5 @@
 class UploadedFilesController < ApplicationController
-  include RequireAuthenticateConcern
+  include RequireAuthorizedConcern
 
   def index
     if current_user.staff?

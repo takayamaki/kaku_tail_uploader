@@ -1,15 +1,23 @@
 class ApplicationController < ActionController::Base
   private
+  def require_authorized
+    unauthorized unless current_user&.authorized?
+  end
+
   def require_staff
     forbidden unless current_user&.staff?
   end
 
   protected
   def forbidden
-    head 403
+    redirect_to '/403'
   end
 
   def not_found
-    head 404
+    redirect_to '/404'
+  end
+
+  def unauthorized
+    redirect_to '/401'
   end
 end
