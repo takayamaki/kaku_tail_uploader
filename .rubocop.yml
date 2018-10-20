@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - 'vendor/**/*'
+Metrics/LineLength:
+  Max: 150
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
