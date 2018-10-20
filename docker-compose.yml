@@ -7,10 +7,10 @@ services:
     entrypoint: sh
     command: -c 'mkdir -p /export/kakutail-store && /usr/bin/minio server /export'
     environment:
-      - "MINIO_ACCESS_KEY=KAKUTAILDEVELOPMENT"
-      - "MINIO_SECRET_KEY=KAKUTAILDEVELOPMENT"
+      - "MINIO_ACCESS_KEY=KAKUTAIL/DEVELOPMENT"
+      - "MINIO_SECRET_KEY=KAKUTAIL/DEVELOPMENT"
   postgresql:
-    image: postgres:9.6
+    image: postgres:9.6-alpine
     ports:
       - "5432:5432"
     environment:
