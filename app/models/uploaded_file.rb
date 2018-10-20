@@ -4,6 +4,7 @@
 #
 #  id         :bigint(8)        not null, primary key
 #  comment    :string           default(""), not null
+#  file_data  :text             not null
 #  file_name  :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
