@@ -1,4 +1,10 @@
 ja:
+  shared:
+    error:
+      unauthorized: あなたは現在未認証状態です。あなたが合作の参加者である場合には、主催者にお問い合わせください。
+      forbidden: このページを閲覧する権限があなたにはありません。
+      not_found: お探しのページはありませんでした。
+    return_to_top_page: トップページに戻る
   uploaded_files:
     new:
       upload: アップロード

@@ -1,4 +1,10 @@
-ja:
+en:
+  shared:
+    error:
+      unauthorized: Your role is 'unauthorized' now. Please contact to organizer.
+      forbidden: You are not authorized to view this page.
+      not_found: Something you are looking for was not found.
+    return_to_top_page: Return to top page.
   uploaded_files:
     new:
       upload: Upload
