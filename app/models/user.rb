@@ -29,7 +29,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
-  enum role: [:unauthorized, :creator, :staff, :host, :admin], _suffix: :role
+  enum role: [:unauthorized, :creator, :staff, :organizer, :admin], _suffix: :role
   has_many :uploaded_file
 
   def authorized?
@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def staff?
-    ['admin', 'host', 'staff'].include? role
+    ['admin', 'organizer', 'staff'].include? role
   end
 
   def upgrade_role

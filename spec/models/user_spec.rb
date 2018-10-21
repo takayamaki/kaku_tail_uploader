@@ -43,9 +43,9 @@ describe User, type: :model do
       expect(user.staff?).to eq true
     end
 
-    it "when host" do
+    it "when organizer" do
       user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 3)
-      expect(user.role).to eq "host"
+      expect(user.role).to eq "organizer"
       expect(user.authorized?).to eq true
       expect(user.staff?).to eq true
     end
