@@ -35,6 +35,6 @@ class UploadedFilesController < ApplicationController
 
   private
   def uploaded_file_params
-    p params.require(:uploaded_file).permit(:file_name, :comment)
+    params.require(:uploaded_file).permit(:file_name, :comment, :file_data)
   end
 end

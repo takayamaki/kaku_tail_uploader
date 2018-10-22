@@ -8,8 +8,8 @@ if Rails.env.production?
   }
 else
   s3_options = {
-    access_key_id:      'KAKUTAILDEVELOPMENT',
-    secret_access_key:  'KAKUTAILDEVELOPMENT',
+    access_key_id:      'KAKUTAIL/DEVELOPMENT',
+    secret_access_key:  'KAKUTAIL/DEVELOPMENT',
     bucket:             'kakutail-store',
     endpoint:           'http://localhost:9000',
     region:             'us-east-1',
@@ -22,4 +22,14 @@ Shrine.storages = {
   store: Shrine::Storage::S3.new(**s3_options),
 }
 Shrine.plugin :activerecord
-Shrine.plugin :presign_endpoint, presign_options: { method: :put }
+Shrine.plugin :presign_endpoint, presign_options: -> (request) do
+  filename     = request.params["fileName"]
+  extension    = File.extname(filename)
+  content_type = Rack::Mime.mime_type(extension)
+
+  {
+    content_disposition: "attachment; filename=\"#{filename}\"", # download with original filename
+    content_type:        content_type,                           # set correct content type
+    method: :put
+  }
+end
