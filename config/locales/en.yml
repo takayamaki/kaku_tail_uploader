@@ -6,10 +6,13 @@ en:
       not_found: Something you are looking for was not found.
     return_to_top_page: Return to top page.
   uploaded_files:
+    index:
+      upload_form: Upload form
     new:
       upload: Upload
-    index:
+    shared:
       created_at: created_at(JST)
       file_name: File name
-      upload_form: Upload form
       upload_user: uploaded by
+    show:
+      download: Download

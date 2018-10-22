@@ -3,10 +3,10 @@
   <table class='table is-fullwidth is-striped'>
     <thead>
       <tr>
-        <th><%=t('uploaded_files.index.file_name')%></th>
-        <th><%=t('uploaded_files.index.created_at')%></th>
+        <th><%=t('uploaded_files.shared.file_name')%></th>
+        <th><%=t('uploaded_files.shared.created_at')%></th>
         <% if current_user.staff? %>
-          <th><%=t('uploaded_files.index.upload_user')%></th>
+          <th><%=t('uploaded_files.shared.upload_user')%></th>
         <% end %>
       </tr>
     </thead>

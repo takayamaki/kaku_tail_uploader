@@ -6,10 +6,13 @@ ja:
       not_found: お探しのページはありませんでした。
     return_to_top_page: トップページに戻る
   uploaded_files:
+    index:
+      upload_form: アップロードする
     new:
       upload: アップロード
-    index:
+    shared:
       created_at: アップロード日時
       file_name: ファイル名
-      upload_form: アップロードする
       upload_user: アップロードしたユーザ
+    show:
+      download: ダウンロード
