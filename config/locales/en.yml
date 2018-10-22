@@ -16,3 +16,5 @@ en:
       upload_user: uploaded by
     show:
       download: Download
+      delete: Delete this file
+      delete_confirm: Are you sure?

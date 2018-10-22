@@ -16,3 +16,5 @@ ja:
       upload_user: アップロードしたユーザ
     show:
       download: ダウンロード
+      delete: 削除する
+      delete_confirm: 本当に削除しますか？
