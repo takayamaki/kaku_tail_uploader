@@ -22,7 +22,7 @@ describe UploadedFilesController, type: :controller do
       before {sign_in(unothorized_user)}
       it do 
         subject
-        expect(response).to have_http_status(403)
+        expect(response).to redirect_to('/401')
       end
     end
 
