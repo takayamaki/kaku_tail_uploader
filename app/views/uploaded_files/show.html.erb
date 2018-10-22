@@ -1,1 +1,17 @@
-uploaded_files/show
+<div class="container">
+  <table class='table is-fullwidth is-striped'>
+    <tr>
+      <th><%= t('uploaded_files.shared.file_name')%></th>
+      <td><%= @uploaded_file.file_name %></td>
+    </tr>
+    <tr>
+      <th><%= t('uploaded_files.shared.created_at')%></th>
+      <td><%= I18n.l(@uploaded_file.created_at) %></td>
+    </tr>
+    <tr>
+      <th><%= t('uploaded_files.shared.upload_user')%></th>
+      <td><%= @uploaded_file.user.display_name %></td>
+    </tr>
+  </table>
+  <%=link_to t('uploaded_files.show.download'), @uploaded_file.file_url, class: 'button is-link'%>
+</div>
