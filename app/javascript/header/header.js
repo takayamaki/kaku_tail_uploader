@@ -1,3 +1,4 @@
+'use strict';
 const toggleActive = (elm) =>{
   elm.classList.contains('is-active') ? elm.classList.remove('is-active') : elm.classList.add('is-active');
 }

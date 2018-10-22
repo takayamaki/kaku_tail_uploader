@@ -1,3 +1,4 @@
+'use strict';
 import '../styles/application'
 import { setToggleMenuHandler } from '../header/header'
 
