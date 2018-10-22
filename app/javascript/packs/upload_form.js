@@ -1,6 +1,6 @@
 'use strict';
 import '../styles/application'
-import { setToggleMenuHandler } from '../header/header'
+import { setToggleMenuHandler } from '../shared/header'
 import {initUppy} from '../upload_form/init_uppy'
 
 const run = ()=>{
