@@ -3,10 +3,10 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "@uppy/aws-s3": "^0.27.4",
     "@uppy/core": "^0.27.3",
     "@uppy/file-input": "^0.27.4",
     "@uppy/status-bar": "^0.27.4",
-    "@uppy/tus": "^0.27.5",
     "bulma": "^0.7.1"
   },
   "devDependencies": {
