@@ -28,9 +28,24 @@ class UploadedFilesController < ApplicationController
   end
 
   def destroy
+    if current_user.staff?
+      target = UploadedFile.find(params[:id])
+    else
+      target = current_user.uploaded_file.where(id: params[:id]).first
+    end
+    not_found unless target.present?
+
+    target.destroy!
+    redirect_to uploaded_files_path
   end
 
   def show
+    if current_user.staff?
+      @uploaded_file = UploadedFile.find(params[:id])
+    else
+      @uploaded_file = current_user.uploaded_file.where(id: params[:id]).first
+    end
+    not_found unless @uploaded_file.present?
   end
 
   private
