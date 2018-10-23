@@ -1,5 +1,8 @@
 ja:
   devise:
+    registrations:
+      name: 表示名
+      role: 役割
     sessions:
       sign_out: ログアウト
     user_info:
