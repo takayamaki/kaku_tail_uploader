@@ -7,6 +7,7 @@ en:
     return_to_top_page: Return to top page.
   uploaded_files:
     index:
+      require_name: Update your name
       upload_form: Upload form
     new:
       upload: Upload

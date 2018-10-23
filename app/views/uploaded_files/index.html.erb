@@ -1,4 +1,11 @@
 <div class="container">
+  <% if !current_user.name.present? %>
+    <article class="message is-warning">
+      <div class="message-body">
+        <%= link_to t('uploaded_files.index.require_name'), edit_user_registration_path %>
+      </div>
+    </article>
+  <% end %>
   <%= link_to t('uploaded_files.index.upload_form'), new_uploaded_file_path, class: 'button is-link' %>
   <table class='table is-fullwidth is-striped'>
     <thead>
