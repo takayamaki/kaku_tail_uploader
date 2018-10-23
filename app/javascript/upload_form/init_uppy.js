@@ -33,17 +33,24 @@ const uploadSuccessHandler = (file, data) =>{
 }
 
 export const initUppy = ()=>{
-  const uppy = new Uppy({ debug: true, autoProceed: true })
+  const uppy = new Uppy({
+    restrictions:{
+      maxFileSize:1024**3, //1GB
+      maxNumberOfFiles: 1
+    },
+    debug: true,
+    autoProceed: true
+  })
 
   uppy.use(
     FileInput,{
-      target: '.UppyInput',
-      pretty: false
+      target: '.FileInput',
+      pretty: true
   }).use(AwsS3,{
     getUploadParameters: getUploadParameters
   }).use(
     StatusBar, {
-      target: '.UppyInput-Progress',
+      target: '.UppyProgress',
       hideUploadButton: true,
       hideAfterFinish: false
   })
