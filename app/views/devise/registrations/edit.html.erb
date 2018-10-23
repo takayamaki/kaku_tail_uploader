@@ -1,12 +1,16 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, html: {class: 'section'}) do |f| %>
   <div class="container">
-    <h2><%= t('.title', resource: resource_name.to_s.humanize) %></h2>
     <%= devise_error_messages! %>
 
     <div class="field">
+      <%= f.label :name, class: 'label' %>
+      <%= f.text_field :name, autofocus: true, class: 'input is-medium' %>
+    </div>
+
+    <div class="field">
       <%= f.label :email, class: 'label' %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium' %>
+      <%= f.email_field :email, autocomplete: "email", class: 'input is-medium' %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -39,7 +43,4 @@
 <% end %>
 <div class="container">
   <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'button is-danger' %></p>
-</div>
-<div class="container">
-<%= link_to t('devise.shared.links.back'), :back %>
 </div>
