@@ -10,10 +10,12 @@ ja:
       upload_form: アップロードする
     new:
       upload: アップロード
+      select_file: ファイル選択
     shared:
       created_at: アップロード日時
       file_name: ファイル名
       upload_user: アップロードしたユーザ
+      comment: 備考
     show:
       download: ダウンロード
       delete: 削除する

@@ -10,10 +10,12 @@ en:
       upload_form: Upload form
     new:
       upload: Upload
+      select_file: Select file
     shared:
       created_at: created_at(JST)
       file_name: File name
       upload_user: uploaded by
+      comment: comment
     show:
       download: Download
       delete: Delete this file
