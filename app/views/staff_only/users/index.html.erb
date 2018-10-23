@@ -2,16 +2,16 @@
   <table class='table is-fullwidth is-striped'>
     <thead>
       <tr>
-        <th>名前</th>
-        <th>権限</th>
-        <th>登録日時</th>
+        <th><%= t('staff_only.shared.name') %></th>
+        <th><%= t('staff_only.shared.role') %></th>
+        <th><%= t('staff_only.shared.created_at') %></th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
         <tr>
           <td>
-            <%= link_to user.display_name, edit_staff_only_user_path(user) %>
+            <%= link_to user.display_name, staff_only_user_path(user) %>
           </td>
           <td>
             <%= user.role %>
