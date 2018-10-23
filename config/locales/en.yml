@@ -22,3 +22,14 @@ en:
       delete: Delete this file
       delete_confirm: Are you sure?
       file_size: File size
+  staff_only:
+    index: Users list
+    shared:
+      created_at: Registered at 
+      email: E-mail
+      name: Name
+      role: Role
+    show:
+      downgrade_role: demote role
+      return_to_index: Return to list of users
+      upgrade_role: promote role

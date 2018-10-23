@@ -22,3 +22,14 @@ ja:
       delete: 削除する
       delete_confirm: 本当に削除しますか？
       file_size: ファイルサイズ
+  staff_only:
+    index: ユーザ一覧
+    shared:
+      created_at: 登録日時 
+      email: E-mailアドレス
+      name: 名前
+      role: 役割
+    show:
+      downgrade_role: 降格
+      return_to_index: ユーザ一覧に戻る
+      upgrade_role: 昇格

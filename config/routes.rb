@@ -4,7 +4,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   namespace :staff_only do
-    resources :users, except: [:new, :create]
+    resources :users, only: [:index, :show] do 
+      resource :role, only: [] do
+        member do
+          post :upgrade
+          post :downgrade
+        end
+      end
+    end
   end
 
   resources :uploaded_files, except: [:edit]

@@ -1,1 +1,27 @@
-/staff_only/users/show
+<div class="container">
+  <table class='table is-fullwidth is-striped'>
+    <tr>
+      <th><%= t('staff_only.shared.name') %></th>
+      <td><%= @user.display_name %></td>
+    </tr>
+    <tr>
+      <th><%= t('staff_only.shared.email') %></th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th><%= t('staff_only.shared.role') %></th>
+      <td>
+        <%= @user.role %>
+        <%= button_to t("staff_only.show.upgrade_role"), upgrade_staff_only_user_role_path(@user.id), method: :post,
+          class: 'navbar-item button is-fullwidth is-warning' if @able_to_upgrade_role %>
+        <%= button_to t("staff_only.show.downgrade_role"), downgrade_staff_only_user_role_path(@user.id), method: :post,
+          class: 'navbar-item button is-fullwidth is-warning' if @able_to_downgrade_role %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('staff_only.shared.created_at')%></th>
+      <td><%= I18n.l(@user.created_at) %></td>
+    </tr>
+  </table>
+  <%=link_to t('staff_only.show.return_to_index'), staff_only_users_path , class: 'button is-link'%>
+</div>
