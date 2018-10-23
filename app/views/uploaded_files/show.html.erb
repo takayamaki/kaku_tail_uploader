@@ -12,6 +12,10 @@
       <th><%= t('uploaded_files.shared.upload_user')%></th>
       <td><%= @uploaded_file.user.display_name %></td>
     </tr>
+    <tr>
+      <th><%= t('uploaded_files.show.file_size')%></th>
+      <td><%= @uploaded_file.file_size_by_megabytes %>MB (<%= @uploaded_file.file.size %>Byte)</td>
+    </tr>
   </table>
   <%=link_to t('uploaded_files.show.download'), @uploaded_file.file_url, class: 'button is-link'%>
   <% if current_user.admin_role? || @uploaded_file.user == current_user %>
