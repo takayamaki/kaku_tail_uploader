@@ -30,5 +30,9 @@ module KakuTailUploader
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.exceptions_app = self.routes
+
+    config.require_master_key = false
+    config.x.secrets = ActiveSupport::InheritableOptions.new(config_for(:secrets))
+    config.secret_token = config.x.secrets.secret_key_base
   end
 end
