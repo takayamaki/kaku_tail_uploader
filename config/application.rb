@@ -34,5 +34,7 @@ module KakuTailUploader
     config.require_master_key = false
     config.x.secrets = ActiveSupport::InheritableOptions.new(config_for(:secrets))
     config.secret_token = config.x.secrets.secret_key_base
+
+    config.time_zone = ENV.fetch('TIME_ZONE'){'Asia/Tokyo'}
   end
 end
