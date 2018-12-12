@@ -31,6 +31,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   enum role: [:unauthorized, :creator, :staff, :organizer, :admin], _suffix: :role
   has_many :uploaded_file
+  scope :role_by, ->(role) {where(role: role)}
 
   def authorized?
     !unauthorized_role?

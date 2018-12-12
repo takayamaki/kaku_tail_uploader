@@ -14,7 +14,7 @@
             <%= link_to user.display_name, staff_only_user_path(user) %>
           </td>
           <td>
-            <%= user.role %>
+            <%= link_to user.role, staff_only_users_path(role: user.role) %>
           </td>
           <td>
             <%= I18n.l(user.created_at) %>
