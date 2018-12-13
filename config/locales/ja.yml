@@ -5,6 +5,9 @@ ja:
       forbidden: このページを閲覧する権限があなたにはありません。
       not_found: お探しのページはありませんでした。
     return_to_top_page: トップページに戻る
+    pagination:
+      next: '>>'
+      previous: '<<'
   uploaded_files:
     index:
       require_name: 表示名を登録してください

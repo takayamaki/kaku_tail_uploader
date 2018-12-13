@@ -32,6 +32,7 @@ class User < ApplicationRecord
   enum role: [:unauthorized, :creator, :staff, :organizer, :admin], _suffix: :role
   has_many :uploaded_file
   scope :role_by, ->(role) {where(role: role)}
+  paginates_per 20
 
   def authorized?
     !unauthorized_role?

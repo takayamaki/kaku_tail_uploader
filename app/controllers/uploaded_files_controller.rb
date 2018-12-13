@@ -3,11 +3,11 @@ class UploadedFilesController < ApplicationController
 
   def index
     if current_user.staff?
-      @uploaded_files = UploadedFile.all
+      @uploaded_files = UploadedFile.page(params[:page])
     elsif current_user.unauthorized_role?
       forbidden
     else
-      @uploaded_files = UploadedFile.uploaded_by(current_user)
+      @uploaded_files = UploadedFile.uploaded_by(current_user).page(params[:page])
     end
   end
 

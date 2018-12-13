@@ -4,9 +4,9 @@ class StaffOnly::UsersController < ApplicationController
 
   def index
     if params['role']
-      @users = User.role_by(params['role'])
+      @users = User.role_by(params['role']).page(params[:page])
     else
-      @users = User.all
+      @users = User.page(params[:page])
     end
   end
 

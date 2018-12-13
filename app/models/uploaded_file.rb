@@ -24,6 +24,7 @@ class UploadedFile < ApplicationRecord
   validates :file_name, presence: true
   belongs_to :user
   scope :uploaded_by, ->(user) {where(user_id: user.id)}
+  paginates_per 20
 
   def file_size_by_megabytes
     format("%.2f", file.size.to_f / 1024 ** 2)
