@@ -1,4 +1,5 @@
 <div class="container">
+  <%= link_to t('staff_only.index.view_all_roles'), staff_only_users_path, class: 'button is-link' if params[:role]%>
   <table class='table is-fullwidth is-striped'>
     <thead>
       <tr>

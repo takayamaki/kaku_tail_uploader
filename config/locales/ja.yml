@@ -26,7 +26,9 @@ ja:
       delete_confirm: 本当に削除しますか？
       file_size: ファイルサイズ
   staff_only:
-    index: ユーザ一覧
+    index:
+      title: ユーザ一覧
+      view_all_roles: 絞り込みを解除する
     shared:
       created_at: 登録日時 
       email: E-mailアドレス

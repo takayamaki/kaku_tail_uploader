@@ -16,7 +16,7 @@
           </a>
           <div class="navbar-dropdown is-right">
             <%= link_to t("devise.user_info.edit"), edit_user_registration_path, class: 'navbar-item' %>
-            <%= link_to t("staff_only.index"), staff_only_users_path, class: 'navbar-item' if current_user.staff? %>
+            <%= link_to t("staff_only.index.title"), staff_only_users_path, class: 'navbar-item' if current_user.staff? %>
             <hr class="dropdown-divider">
             <%= button_to t("devise.sessions.sign_out"), destroy_user_session_path, method: :delete, class: 'navbar-item button is-fullwidth is-warning' %>
             </div>
