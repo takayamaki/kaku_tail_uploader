@@ -3,11 +3,8 @@ class StaffOnly::UsersController < ApplicationController
   include ChangeRoleConcern
 
   def index
-    if params['role']
-      @users = User.role_by(params['role']).page(params[:page])
-    else
-      @users = User.page(params[:page])
-    end
+    @users = User.page(params[:page])
+    @users = @users.role_by(params['role']) if params['role']
   end
 
   def show
