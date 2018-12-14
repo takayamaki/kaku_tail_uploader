@@ -12,6 +12,7 @@ ja:
     index:
       require_name: 表示名を登録してください
       upload_form: アップロードする
+      view_all_files: 絞り込みを解除する
     new:
       upload: アップロード
       select_file: ファイル選択

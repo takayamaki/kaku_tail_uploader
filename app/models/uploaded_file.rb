@@ -23,7 +23,7 @@ class UploadedFile < ApplicationRecord
   include FileUploader[:file]
   validates :file_name, presence: true
   belongs_to :user
-  scope :uploaded_by, ->(user) {where(user_id: user.id)}
+  scope :by_upload_user_id, ->(user_id) {where(user_id: user_id)}
   paginates_per 20
 
   def file_size_by_megabytes

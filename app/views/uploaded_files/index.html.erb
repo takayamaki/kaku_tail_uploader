@@ -7,6 +7,7 @@
     </article>
   <% end %>
   <%= link_to t('uploaded_files.index.upload_form'), new_uploaded_file_path, class: 'button is-link' %>
+  <%= link_to t('uploaded_files.index.view_all_files'), uploaded_files_path, class: 'button is-link' if params[:user_id]%>
   <table class='table is-fullwidth is-striped'>
     <thead>
       <tr>
@@ -27,7 +28,9 @@
             <%= I18n.l(uploaded_file.created_at) %>
           </td>
         <% if current_user.staff? %>
-            <td><%= uploaded_file.user.display_name%></td>
+            <td>
+              <%= link_to uploaded_file.user.display_name, uploaded_files_path(user_id: uploaded_file.user.id) %>
+            </td>
         <% end %>
         </tr>
       <%end%>
