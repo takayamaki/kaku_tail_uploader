@@ -34,7 +34,7 @@ class UploadedFilesController < ApplicationController
     if current_user.staff?
       target = UploadedFile.find(params[:id])
     else
-      target = current_user.uploaded_file.where(id: params[:id]).first
+      target = current_user.uploaded_file.find(params[:id])
     end
     not_found unless target.present?
 
@@ -46,7 +46,7 @@ class UploadedFilesController < ApplicationController
     if current_user.staff?
       @uploaded_file = UploadedFile.find(params[:id])
     else
-      @uploaded_file = current_user.uploaded_file.where(id: params[:id]).first
+      @uploaded_file = current_user.uploaded_file.find(params[:id])
     end
     not_found unless @uploaded_file.present?
   end
