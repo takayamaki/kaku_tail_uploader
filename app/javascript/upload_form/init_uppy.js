@@ -35,7 +35,7 @@ const uploadSuccessHandler = (file, data) =>{
 export const initUppy = ()=>{
   const uppy = new Uppy({
     restrictions:{
-      maxFileSize:1024**3, //1GB
+      maxFileSize:5*(1000**3), //5GB
       maxNumberOfFiles: 1
     },
     debug: true,
