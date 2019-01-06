@@ -22,6 +22,12 @@
       <th><%= t('staff_only.shared.created_at')%></th>
       <td><%= I18n.l(@user.created_at) %></td>
     </tr>
+    <tr>
+      <th><%= t('staff_only.show.upload_files_count')%></th>
+      <td>
+        <%= link_to @upload_files_count, uploaded_files_path(user_id: @user.id) %>
+      </td>
+    </tr>
   </table>
   <%=link_to t('staff_only.show.return_to_index'), staff_only_users_path , class: 'button is-link'%>
 </div>

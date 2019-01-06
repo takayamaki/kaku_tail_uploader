@@ -33,3 +33,4 @@ en:
       downgrade_role: demote role
       return_to_index: Return to list of users
       upgrade_role: promote role
+      upload_files_count: Upload files count
