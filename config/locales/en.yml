@@ -12,6 +12,7 @@ en:
     new:
       upload: Upload
       select_file: Select file
+      size_limit: You can upload file up to 5GB.
     shared:
       created_at: created_at(JST)
       file_name: File name
