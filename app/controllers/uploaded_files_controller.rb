@@ -11,7 +11,7 @@ class UploadedFilesController < ApplicationController
       @uploaded_files = UploadedFile.by_upload_user_id(current_user.id)
     end
 
-    @uploaded_files = @uploaded_files.page(params[:page])
+    @uploaded_files = @uploaded_files.reverse_order.page(params[:page])
   end
 
   def new
