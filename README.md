@@ -43,3 +43,6 @@ RAILS_ENV=production bundle ex rails assets:precompile
 
 ## Todo
 - テストを書き足す
+
+## LICENCE
+This software is released under the MIT License.
