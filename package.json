@@ -1,5 +1,5 @@
 {
-  "name": "kaku_tail_uploader",
+  "name": "msc_uploader",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
