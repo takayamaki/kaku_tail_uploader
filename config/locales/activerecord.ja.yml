@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      uploaded_file: 提出ファイル
+    attributes:
+      uploaded_file:
+        start_of_15sec: 予選の始点秒数
+        start_of_30sec: 本戦の始点秒数
+        start_of_60sec: 決勝の始点秒数
+        start_of_15sec_by_frame: 予選の始点フレーム
+        start_of_30sec_by_frame: 本戦の始点フレーム
+        start_of_60sec_by_frame: 決勝の始点フレーム
