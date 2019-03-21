@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   match '/401', to: 'errors#unauthorized', via: :all
   match '/403', to: 'errors#forbidden', via: :all
   match '/404', to: 'errors#not_found', via: :all
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
