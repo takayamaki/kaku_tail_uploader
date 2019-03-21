@@ -1,8 +1,14 @@
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }, html: {class: 'section'}) do |f| %>
   <div class="container">
-    <h2><%= t('.resend_confirmation_instructions') %></h2>
-    <%= devise_error_messages! %>
+    <h2 class="title"><%= t('.resend_confirmation_instructions') %></h2>
+    <% if resource.errors.any? %>
+      <div class="message is-danger">
+        <div class="message-body">
+          <%= devise_error_messages! %>
+        </div>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= f.label :email, class: 'label' %>

@@ -1,8 +1,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'section'}) do |f| %>
   <div class="container">
-    <h2><%= t('.sign_up') %></h2>
-    <%= devise_error_messages! %>
+    <h2 class="title"><%= t('.sign_up') %></h2>
+    <% if resource.errors.any? %>
+      <div class="message is-danger">
+        <div class="message-body">
+          <%= devise_error_messages! %>
+        </div>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= f.label "#{t('devise.registrations.name')}#{t('devise.registrations.name_hint')}", class: 'label' %>

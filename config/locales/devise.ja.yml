@@ -5,6 +5,9 @@ ja:
       name: 名前
       name_hint: (エンディングで使用します。登録後変更可能)
       role: 役割
+    passwords:
+      new:
+        forgot_your_password: "パスワードの再設定"
     sessions:
       sign_out: ログアウト
     user_info:

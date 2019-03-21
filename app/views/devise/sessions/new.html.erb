@@ -1,6 +1,6 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'section'}) do |f| %>
   <div class="container">
-    <h2><%= t('.sign_in') %></h2>
+    <h2 class="title"><%= t('.sign_in') %></h2>
     <%= f.label :email, class: 'label' %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium' %>
 
