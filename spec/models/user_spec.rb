@@ -22,38 +22,27 @@ describe User, type: :model do
   end
 
   context "returns role" do
-    it "when unauthorized" do
-      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 0)
-      expect(user.role).to eq "unauthorized"
-      expect(user.authorized?).to eq false
-      expect(user.staff?).to eq false
-    end
-
     it "when creator" do
-      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 1)
+      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 0)
       expect(user.role).to eq "creator"
-      expect(user.authorized?).to eq true
       expect(user.staff?).to eq false
     end
 
     it "when staff" do
-      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 2)
+      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 1)
       expect(user.role).to eq "staff"
-      expect(user.authorized?).to eq true
       expect(user.staff?).to eq true
     end
 
     it "when organizer" do
-      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 3)
+      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 2)
       expect(user.role).to eq "organizer"
-      expect(user.authorized?).to eq true
       expect(user.staff?).to eq true
     end
 
     it "when admin" do
-      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 4)
+      user = User.create(email: 'test@example.com', password: 'testPassword', name: 'test name', confirmed_at: Time.zone.now, role: 3)
       expect(user.role).to eq "admin"
-      expect(user.authorized?).to eq true
       expect(user.staff?).to eq true
     end
 

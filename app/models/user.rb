@@ -12,7 +12,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  role                   :integer          default("unauthorized")
+#  role                   :integer          default("creator")
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -29,21 +29,17 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
-  enum role: [:unauthorized, :creator, :staff, :organizer, :admin], _suffix: :role
+  enum role: [:creator, :staff, :organizer, :admin], _suffix: :role
   has_many :uploaded_file
   scope :role_by, ->(role) {where(role: role)}
   paginates_per 20
-
-  def authorized?
-    !unauthorized_role?
-  end
 
   def staff?
     ['admin', 'organizer', 'staff'].include? role
   end
 
   def upgrade_role
-    update! role:([role_before_type_cast + 1, 4].min)
+    update! role:([role_before_type_cast + 1, 3].min)
   end
 
   def downgrade_role

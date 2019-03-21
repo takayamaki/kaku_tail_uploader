@@ -1,9 +1,6 @@
 class UploadedFilesController < ApplicationController
-  include RequireAuthorizedConcern
-
+  include RequireAuthenticateConcern
   def index
-    forbidden if current_user.unauthorized_role?
-
     if current_user.staff?
       @uploaded_files = UploadedFile.all
       @uploaded_files = @uploaded_files.by_upload_user_id(params[:user_id]) if params[:user_id]

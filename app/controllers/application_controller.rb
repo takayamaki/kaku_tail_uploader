@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::Base
   private
-  def require_authorized
-    unauthorized unless current_user&.authorized?
-  end
-
   def require_staff
     forbidden unless current_user&.staff?
   end
