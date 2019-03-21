@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_190435) do
+ActiveRecord::Schema.define(version: 2019_03_21_122153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2018_10_14_190435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "file_data", null: false
+    t.float "start_of_15sec", null: false
+    t.float "start_of_30sec", null: false
+    t.float "start_of_60sec", null: false
+    t.integer "start_of_15sec_by_frame"
+    t.integer "start_of_30sec_by_frame"
+    t.integer "start_of_60sec_by_frame"
     t.index ["user_id"], name: "index_uploaded_files_on_user_id"
   end
 

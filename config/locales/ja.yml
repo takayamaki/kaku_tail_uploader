@@ -21,6 +21,13 @@ ja:
       created_at: アップロード日時
       file_name: ファイル名
       upload_user: アップロードしたユーザ
+      15sec: 予選の始点秒数
+      30sec: 本戦の始点秒数
+      60sec: 決勝の始点秒数
+      summary_for_frame: フレーム数で指定する(任意入力、クリックすると開きます)
+      15sec_by_frame: 予選の始点フレーム
+      30sec_by_frame: 本戦の始点フレーム
+      60sec_by_frame: 決勝の始点フレーム
       comment: 備考
     show:
       download: ダウンロード
