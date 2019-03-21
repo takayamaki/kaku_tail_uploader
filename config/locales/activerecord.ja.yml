@@ -4,6 +4,8 @@ ja:
       user: ユーザ
       uploaded_file: 提出ファイル
     attributes:
+      user:
+        name: 名前
       uploaded_file:
         start_of_15sec: 予選の始点秒数
         start_of_30sec: 本戦の始点秒数

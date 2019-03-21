@@ -30,6 +30,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   enum role: [:creator, :staff, :organizer, :admin], _suffix: :role
+  validates :name, presence: true
   has_one :uploaded_file
   scope :role_by, ->(role) {where(role: role)}
   paginates_per 20
