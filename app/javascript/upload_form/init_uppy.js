@@ -6,7 +6,8 @@ import FileInput from '@uppy/file-input';
 import StatusBar from '@uppy/status-bar';
 
 const getUploadParameters = (file) => {
-  const fileName = encodeURIComponent(file.name);
+  const userid = document.getElementById('new_uploaded_file').getAttribute('data-userid')
+  const fileName = `${("000" + userid).substr(-3)}_${encodeURIComponent(file.name)}`;
 
   return fetch(`/api/presign?fileName=${fileName}`).then((response)=>{
     return response.json()
@@ -15,16 +16,15 @@ const getUploadParameters = (file) => {
 
 const uploadSuccessHandler = (file, data) =>{
   const fileNameInput = document.getElementById('uploaded_file_file_name')
-  fileNameInput.value = file.name
-
-  console.log(file,data)
+  const userid = document.getElementById('new_uploaded_file').getAttribute('data-userid')
+  fileNameInput.value = `${("000" + userid).substr(-3)}_${file.name}`
   
   const fileData = JSON.stringify({
     id: data.location.split('/').slice(-1)[0],
     storage: 'cache',
     metadata: {
       size:      file.size,
-      filename:  file.name,
+      filename:  fileNameInput.value,
       mime_type: file.type
     }
   })
