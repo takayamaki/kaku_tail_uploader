@@ -12,13 +12,13 @@ class UploadedFilesController < ApplicationController
   end
 
   def new
-    @uploaded_file = current_user.uploaded_file.build
+    @uploaded_file = current_user.build_uploaded_file
     render layout: 'layouts/upload_form'
   end
 
 
   def create
-    @uploaded_file = current_user.uploaded_file.create(uploaded_file_params)
+    @uploaded_file = current_user.create_uploaded_file(uploaded_file_params)
 
     if @uploaded_file.save
       redirect_to @uploaded_file, notice: 'Uploaded file was successfully created.'

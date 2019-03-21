@@ -11,6 +11,7 @@ ja:
   uploaded_files:
     index:
       require_name: 表示名を登録してください
+      file_already_exists_warning: 一つのアカウントで提出できる動画は一つまでです
       upload_form: アップロードする
       view_all_files: 絞り込みを解除する
     new:
