@@ -12,7 +12,7 @@
       <% @users.each do |user| %>
         <tr>
           <td>
-            <%= link_to user.display_name, staff_only_user_path(user) %>
+            <%= link_to user.name, staff_only_user_path(user) %>
           </td>
           <td>
             <%= link_to user.role, staff_only_users_path(role: user.role) %>

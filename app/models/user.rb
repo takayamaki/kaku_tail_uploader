@@ -46,9 +46,4 @@ class User < ApplicationRecord
   def downgrade_role
     update! role: ([role_before_type_cast - 1, 0].max)
   end
-
-  def display_name
-    return email if name.empty?
-    name
-  end
 end

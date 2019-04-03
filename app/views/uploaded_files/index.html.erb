@@ -30,7 +30,7 @@
           </td>
         <% if current_user.staff? %>
             <td>
-              <%= link_to uploaded_file.user.display_name, uploaded_files_path(user_id: uploaded_file.user.id) %>
+              <%= link_to uploaded_file.user.name, uploaded_files_path(user_id: uploaded_file.user.id) %>
             </td>
         <% end %>
         </tr>
