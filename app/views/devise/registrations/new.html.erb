@@ -11,11 +11,6 @@
     <% end %>
 
     <div class="field">
-      <%= f.label "#{t('devise.registrations.name')}#{t('devise.registrations.name_hint')}", class: 'label' %>
-      <%= f.text_field :name, autofocus: true, class: 'input is-medium' %>
-    </div>
-
-    <div class="field">
       <%= f.label :email, class: 'label' %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-medium' %>
     </div>
@@ -31,6 +26,11 @@
     <div class="field">
       <%= f.label :password_confirmation, class: 'label' %>
       <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input is-medium' %>
+    </div>
+
+    <div class="field">
+      <%= f.label "#{t('devise.registrations.name')}#{t('devise.registrations.name_hint')}", class: 'label' %>
+      <%= f.text_field :name, autocomplete: "nickname", class: 'input is-medium' %>
     </div>
 
     <div class="actions">
