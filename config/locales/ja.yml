@@ -49,4 +49,5 @@ ja:
       downgrade_role: 降格
       return_to_index: ユーザ一覧に戻る
       upgrade_role: 昇格
-      upload_files_count: アップロードしたファイル
+      upload_file: アップロードしたファイル
+      does_not_exist_yet: まだありません

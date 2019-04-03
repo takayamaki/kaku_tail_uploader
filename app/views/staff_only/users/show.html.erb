@@ -23,9 +23,13 @@
       <td><%= I18n.l(@user.created_at) %></td>
     </tr>
     <tr>
-      <th><%= t('staff_only.show.upload_files_count')%></th>
+      <th><%= t('staff_only.show.upload_file')%></th>
       <td>
-        <%= link_to @upload_files_count, uploaded_files_path(user_id: @user.id) %>
+      <% if @upload_file.present? %>
+        <%= link_to @upload_file.file_name, uploaded_file_path(id: @upload_file.id) %>
+      <% else %>
+        <%= t("staff_only.show.does_not_exist_yet") %>
+      <% end %>
       </td>
     </tr>
   </table>

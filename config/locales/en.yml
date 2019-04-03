@@ -34,4 +34,5 @@ en:
       downgrade_role: demote role
       return_to_index: Return to list of users
       upgrade_role: promote role
-      upload_files_count: Upload files count
+      upload_file: Upload files count
+      does_not_exist_yet: Does not exist yet.
