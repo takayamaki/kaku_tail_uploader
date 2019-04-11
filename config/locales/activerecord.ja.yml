@@ -7,9 +7,11 @@ ja:
       user:
         name: 名前
       uploaded_file:
+        thumbnail: サムネイル(秒数表記)
         start_of_15sec: 予選の始点秒数
         start_of_30sec: 本戦の始点秒数
         start_of_60sec: 決勝の始点秒数
+        thumbnail_by_frame: サムネイル(フレーム数表記)
         start_of_15sec_by_frame: 予選の始点フレーム
         start_of_30sec_by_frame: 本戦の始点フレーム
         start_of_60sec_by_frame: 決勝の始点フレーム
