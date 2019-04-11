@@ -17,6 +17,8 @@
       <%= f.label t('uploaded_files.shared.file_name'), class: 'label' %>
       <%= f.text_field :file_name, class: 'input is-medium', readonly: true %>
 
+      <%= f.label t('uploaded_files.shared.thumbnail'), class: 'label' %>
+      <%= f.text_field :thumbnail, class: 'input is-medium', placeholder: '111.1' %>
       <%= f.label t('uploaded_files.shared.15sec'), class: 'label' %>
       <%= f.text_field :start_of_15sec, class: 'input is-medium', placeholder: '96.1' %>
       <%= f.label t('uploaded_files.shared.30sec'), class: 'label' %>
@@ -25,6 +27,8 @@
       <%= f.text_field :start_of_60sec, class: 'input is-medium', placeholder: '76.5'  %>
       <details>
         <summary><%= t('uploaded_files.shared.summary_for_frame') %></summary>
+        <%= f.label t('uploaded_files.shared.thumbnail_by_frame'), class: 'label' %>
+        <%= f.text_field :thumbnail_by_frame, class: 'input is-medium', placeholder: '825' %>
         <%= f.label t('uploaded_files.shared.15sec_by_frame'), class: 'label' %>
         <%= f.text_field :start_of_15sec_by_frame, class: 'input is-medium', placeholder: '346' %>
         <%= f.label t('uploaded_files.shared.30sec_by_frame'), class: 'label' %>

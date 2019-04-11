@@ -50,6 +50,7 @@ class UploadedFilesController < ApplicationController
 
   private
   def uploaded_file_params
-    params.require(:uploaded_file).permit(:file_name, :start_of_15sec, :start_of_30sec, :start_of_60sec, :start_of_15sec_by_frame, :start_of_30sec_by_frame, :start_of_60sec_by_frame, :comment, :file_data)
+    params.require(:uploaded_file).permit(:file_name,:thumbnail, :start_of_15sec, :start_of_30sec, :start_of_60sec,
+      :thumbnail_by_frame, :start_of_15sec_by_frame, :start_of_30sec_by_frame, :start_of_60sec_by_frame, :comment, :file_data)
   end
 end

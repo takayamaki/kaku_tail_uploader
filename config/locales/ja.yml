@@ -19,14 +19,17 @@ ja:
       select_file: ファイル選択
       size_limit: 5GB(5,000,000,000バイト)までのサイズのファイルをアップロードできます。
       error_not_include_prev_section: に前の区間が含まれていません
+      error_not_include_thumbnail: が予選での放映区間内に含まれていません
     shared:
       created_at: アップロード日時
       file_name: ファイル名
       upload_user: アップロードしたユーザ
+      thumbnail: サムネイル(秒数表記)
       15sec: 予選の始点秒数
       30sec: 本戦の始点秒数
       60sec: 決勝の始点秒数
       summary_for_frame: フレーム数で指定する(任意入力、クリックすると開きます)
+      thumbnail_by_frame: サムネイル(フレーム数表記)
       15sec_by_frame: 予選の始点フレーム
       30sec_by_frame: 本戦の始点フレーム
       60sec_by_frame: 決勝の始点フレーム
@@ -38,6 +41,7 @@ ja:
       delete: 削除する
       delete_confirm: 本当に削除しますか？
       file_size: ファイルサイズ
+      thumbnail: サムネイル
       15sec: 予選
       30sec: 本戦
       60sec: 決勝

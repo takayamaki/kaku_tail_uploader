@@ -14,12 +14,14 @@
         <table>
           <tr>
             <th><%= t('uploaded_files.show.method')%></th>
+            <th><%= t('uploaded_files.show.thumbnail')%></th>
             <th><%= t('uploaded_files.show.15sec')%></th>
             <th><%= t('uploaded_files.show.30sec')%></th>
             <th><%= t('uploaded_files.show.60sec')%></th>
           </tr>
           <tr>
             <td><%= t('uploaded_files.show.by_sec')%></td>
+            <td><%= @uploaded_file.thumbnail%></td>
             <td><%= @uploaded_file.start_of_15sec%></td>
             <td><%= @uploaded_file.start_of_30sec%></td>
             <td><%= @uploaded_file.start_of_60sec%></td>
@@ -27,6 +29,7 @@
           <% if @uploaded_file.start_of_15sec_by_frame.present? %>
             <tr>
             <td><%= t('uploaded_files.show.by_frame')%></td>
+            <td><%= @uploaded_file.thumbnail_by_frame%></td>
             <td><%= @uploaded_file.start_of_15sec_by_frame%></td>
             <td><%= @uploaded_file.start_of_30sec_by_frame%></td>
             <td><%= @uploaded_file.start_of_60sec_by_frame%></td>
