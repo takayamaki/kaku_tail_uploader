@@ -32,10 +32,17 @@ ja:
       60sec_by_frame: 決勝の始点フレーム
       comment: 備考
     show:
+      timepoints: 指定した始点
+      method: 表記
       download: ダウンロード
       delete: 削除する
       delete_confirm: 本当に削除しますか？
       file_size: ファイルサイズ
+      15sec: 予選
+      30sec: 本戦
+      60sec: 決勝
+      by_sec: 秒数
+      by_frame: フレーム数
   staff_only:
     index:
       title: ユーザ一覧

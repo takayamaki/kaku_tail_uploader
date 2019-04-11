@@ -9,6 +9,33 @@
       <td><%= I18n.l(@uploaded_file.created_at) %></td>
     </tr>
     <tr>
+      <th><%= t('uploaded_files.show.timepoints')%></th>
+      <td>
+        <table>
+          <tr>
+            <th><%= t('uploaded_files.show.method')%></th>
+            <th><%= t('uploaded_files.show.15sec')%></th>
+            <th><%= t('uploaded_files.show.30sec')%></th>
+            <th><%= t('uploaded_files.show.60sec')%></th>
+          </tr>
+          <tr>
+            <td><%= t('uploaded_files.show.by_sec')%></td>
+            <td><%= @uploaded_file.start_of_15sec%></td>
+            <td><%= @uploaded_file.start_of_30sec%></td>
+            <td><%= @uploaded_file.start_of_60sec%></td>
+          </tr>
+          <% if @uploaded_file.start_of_15sec_by_frame.present? %>
+            <tr>
+            <td><%= t('uploaded_files.show.by_frame')%></td>
+            <td><%= @uploaded_file.start_of_15sec_by_frame%></td>
+            <td><%= @uploaded_file.start_of_30sec_by_frame%></td>
+            <td><%= @uploaded_file.start_of_60sec_by_frame%></td>
+            </tr>
+          <%end%>
+        </table>
+      </td>
+    </tr>
+    <tr>
       <th><%= t('uploaded_files.shared.upload_user')%></th>
       <td><%= @uploaded_file.user.name %></td>
     </tr>
