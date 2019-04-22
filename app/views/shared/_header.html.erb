@@ -24,9 +24,11 @@
           </div>
         </div>
       <% else %>
-        <div class='navbar-item'>
-          <%= link_to t("devise.shared.links.sign_up"), new_user_registration_path %>
-        </div>
+        <% if @can_signup %>
+          <div class='navbar-item'>
+            <%= link_to t("devise.shared.links.sign_up"), new_user_registration_path %>
+          </div>
+        <%end%>
         <div class='navbar-item'>
           <%= link_to t("devise.shared.links.sign_in"), new_session_path(resource_name) %>
         </div>
