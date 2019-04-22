@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         end
       end
     end
+    resource :config, only: [:show, :update]
   end
 
   resources :uploaded_files, except: [:edit]

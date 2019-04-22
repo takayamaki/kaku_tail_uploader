@@ -1,0 +1,26 @@
+<%= form_for(@configs, url: '/staff_only/config', method: 'PATCH', html: {class: 'section'},data: {userid: current_user.id}) do |f| %>
+  <div class="container">
+    <%= render partial: 'shared/error_messages', locals: {model: @configs} %>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label t('.can_signup'), class: 'label' %>
+      </div>
+      <div class="field-body">
+        <%= f.check_box  :can_signup, class: 'checkbox' %>
+      </div>
+    </div>
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <%= f.label t('.can_upload'), class: 'label' %>
+      </div>
+      <div class="field-body field is-narrow">
+        <%= f.check_box  :can_upload, class: 'checkbox' %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t('.submit'), class: 'button is-link' %>
+    </div>
+  </div>
+<% end %>

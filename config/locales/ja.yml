@@ -51,3 +51,9 @@ ja:
       upgrade_role: 昇格
       upload_file: アップロードしたファイル
       does_not_exist_yet: まだありません
+    configs:
+      title: イベント設定
+      show:
+        can_signup: 新規登録を許可する
+        can_upload: ファイルの提出を許可する
+        submit: 保存する
