@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'uploaded_files#index'
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations',
+    passwords: 'users/passwords',
+    sessions: 'users/sessions'
   }
   namespace :staff_only do
     resources :users, only: [:index, :show] do 
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
         end
       end
     end
+    resource :config, only: [:show, :update]
   end
 
   resources :uploaded_files, except: [:edit]

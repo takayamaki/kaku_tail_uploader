@@ -1,11 +1,11 @@
 <div class="container">
-  <% if current_user.uploaded_file.present? %>
+  <% if @can_upload && current_user.uploaded_file.present? %>
     <article class="message is-warning">
       <div class="message-body">
         <%= t('uploaded_files.index.file_already_exists_warning') %>
       </div>
     </article>
-  <% else %>
+  <% elsif @can_upload %>
     <%= link_to t('uploaded_files.index.upload_form'), new_uploaded_file_path, class: 'button is-link' %>
   <% end %>
   <%= link_to t('uploaded_files.index.view_all_files'), uploaded_files_path, class: 'button is-link' if params[:user_id]%>
