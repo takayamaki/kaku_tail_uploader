@@ -1,6 +1,9 @@
 class UploadedFilesController < ApplicationController
   include RequireAuthenticateConcern
+  before_action :check_able_to_upload, only: [:new]
+
   def index
+    @can_upload = Config.can_upload == "1"
     if current_user.staff?
       @uploaded_files = UploadedFile.all
       @uploaded_files = @uploaded_files.by_upload_user_id(params[:user_id]) if params[:user_id]
@@ -51,5 +54,9 @@ class UploadedFilesController < ApplicationController
   private
   def uploaded_file_params
     params.require(:uploaded_file).permit(:file_name, :start_of_15sec, :start_of_30sec, :start_of_60sec, :start_of_15sec_by_frame, :start_of_30sec_by_frame, :start_of_60sec_by_frame, :comment, :file_data)
+  end
+
+  def check_able_to_upload
+    forbidden if Config.can_upload == "0"
   end
 end
