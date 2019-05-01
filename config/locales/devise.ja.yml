@@ -5,6 +5,9 @@ ja:
       name: 名前
       name_hint: (エンディングで使用します。登録後変更可能)
       role: 役割
+      new:
+        sign_up: 参加登録
+        accounce_confirm_html: 「参加登録」をクリックするとメールアドレスに確認メールが届きます。<br />メール記載のリンクをクリックすることで参加申し込み完了となります。
     passwords:
       new:
         forgot_your_password: "パスワードの再設定"
@@ -12,3 +15,6 @@ ja:
       sign_out: ログアウト
     user_info:
       edit: ユーザ情報の編集
+    shared:
+      links:
+        sign_up: 参加登録
