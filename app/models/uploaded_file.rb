@@ -2,21 +2,25 @@
 #
 # Table name: uploaded_files
 #
-#  id                      :bigint(8)        not null, primary key
-#  comment                 :string           default(""), not null
-#  file_data               :text             not null
-#  file_name               :string           not null
-#  start_of_15sec          :float            not null
-#  start_of_15sec_by_frame :integer
-#  start_of_30sec          :float            not null
-#  start_of_30sec_by_frame :integer
-#  start_of_60sec          :float            not null
-#  start_of_60sec_by_frame :integer
-#  thumbnail               :float            not null
-#  thumbnail_by_frame      :integer
-#  created_at              :datetime         not null
-#  updated_at              :datetime         not null
-#  user_id                 :bigint(8)
+#  id                        :bigint(8)        not null, primary key
+#  comment                   :string           default(""), not null
+#  file_data                 :text             not null
+#  file_name                 :string           not null
+#  start_of_15sec_by_frame   :integer
+#  start_of_15sec_frame_part :integer
+#  start_of_15sec_sec_part   :integer          not null
+#  start_of_30sec_by_frame   :integer
+#  start_of_30sec_frame_part :integer
+#  start_of_30sec_sec_part   :integer          not null
+#  start_of_60sec_by_frame   :integer
+#  start_of_60sec_frame_part :integer
+#  start_of_60sec_sec_part   :integer          not null
+#  thumbnail_by_frame        :integer
+#  thumbnail_frame_part      :integer
+#  thumbnail_sec_part        :integer          not null
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  user_id                   :bigint(8)
 #
 # Indexes
 #
