@@ -7,11 +7,15 @@ ja:
       user:
         name: 名前
       uploaded_file:
-        thumbnail: サムネイル(秒数表記)
-        start_of_15sec: 予選の始点秒数
-        start_of_30sec: 本戦の始点秒数
-        start_of_60sec: 決勝の始点秒数
+        thumbnail_sec_part: サムネイル(秒数部)
+        thumbnail_frame_part: サムネイル(フレーム数部)
+        start_of_15sec_sec_part: 予選プレビュー始点(秒数部)
+        start_of_15sec_frame_part: 予選プレビュー始点(フレーム数部)
+        start_of_30sec_sec_part: 本戦プレビュー始点(秒数部)
+        start_of_30sec_frame_part: 本戦プレビュー始点(フレーム数部)
+        start_of_60sec_sec_part: 決勝プレビュー始点(秒数部)
+        start_of_60sec_frame_part: 決勝プレビュー始点(フレーム数部)
         thumbnail_by_frame: サムネイル(フレーム数表記)
-        start_of_15sec_by_frame: 予選の始点フレーム
-        start_of_30sec_by_frame: 本戦の始点フレーム
-        start_of_60sec_by_frame: 決勝の始点フレーム
+        start_of_15sec_by_frame: 予選プレビュー始点フレーム
+        start_of_30sec_by_frame: 本戦プレビュー始点フレーム
+        start_of_60sec_by_frame: 決勝プレビュー始点フレーム
