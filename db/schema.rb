@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_162144) do
+ActiveRecord::Schema.define(version: 2019_05_03_134248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,7 @@ ActiveRecord::Schema.define(version: 2019_05_01_162144) do
     t.integer "start_of_15sec_sec_part", null: false
     t.integer "start_of_30sec_sec_part", null: false
     t.integer "start_of_60sec_sec_part", null: false
-    t.integer "start_of_15sec_by_frame"
-    t.integer "start_of_30sec_by_frame"
-    t.integer "start_of_60sec_by_frame"
     t.integer "thumbnail_sec_part", null: false
-    t.integer "thumbnail_by_frame"
     t.integer "thumbnail_frame_part"
     t.integer "start_of_15sec_frame_part"
     t.integer "start_of_30sec_frame_part"

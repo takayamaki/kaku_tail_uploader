@@ -24,15 +24,11 @@ ja:
       created_at: アップロード日時
       file_name: ファイル名
       upload_user: アップロードしたユーザ
-      thumbnail: サムネイル(秒数表記)
-      15sec: 予選の始点秒数
-      30sec: 本戦の始点秒数
-      60sec: 決勝の始点秒数
+      thumbnail: サムネイル
+      15sec: 予選プレビューの始点
+      30sec: 本戦プレビューの始点
+      60sec: 決勝プレビューの始点
       summary_for_frame: フレーム数で指定する(任意入力、クリックすると開きます)
-      thumbnail_by_frame: サムネイル(フレーム数表記)
-      15sec_by_frame: 予選の始点フレーム
-      30sec_by_frame: 本戦の始点フレーム
-      60sec_by_frame: 決勝の始点フレーム
       comment: 備考
     show:
       timepoints: 指定した始点
