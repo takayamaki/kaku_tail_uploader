@@ -21,8 +21,7 @@ ja:
       upload: アップロード
       select_file: ファイル選択
       size_limit: 5GB(5,000,000,000バイト)までのサイズのファイルをアップロードできます。
-      error_not_include_prev_section: に前の区間が含まれていません
-      error_not_include_thumbnail: が予選での放映区間内に含まれていません
+      error_not_include: "%{longer}に%{shorter}が含まれていません"
     shared:
       created_at: アップロード日時
       file_name: ファイル名

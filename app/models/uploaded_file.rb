@@ -35,6 +35,7 @@ class UploadedFile < ApplicationRecord
             :start_of_30sec_sec_part, :start_of_30sec_frame_part,
             :start_of_60sec_sec_part, :start_of_60sec_frame_part,
             numericality: { only_integer: true }
+  validates_with PreviewPointValidator
 
   belongs_to :user
   scope :by_upload_user_id, ->(user_id) {where(user_id: user_id)}
@@ -42,5 +43,18 @@ class UploadedFile < ApplicationRecord
 
   def file_size_by_megabytes
     format("%.2f", file.size.to_f / 1024 ** 2)
+  end
+
+  def thumbnail_by_frame
+    thumbnail_sec_part*30 + thumbnail_frame_part
+  end
+  def start_of_15sec_by_frame
+    start_of_15sec_sec_part*30 + start_of_15sec_frame_part
+  end
+  def start_of_30sec_by_frame
+    start_of_30sec_sec_part*30 + start_of_30sec_frame_part
+  end
+  def start_of_60sec_by_frame
+    start_of_60sec_sec_part*30 + start_of_60sec_frame_part
   end
 end
