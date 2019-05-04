@@ -47,7 +47,7 @@
     </tr>
   </table>
   <%=link_to t('uploaded_files.show.download'), @uploaded_file.file_url, class: 'button is-link'%>
-  <% if current_user.admin_role? || @uploaded_file.user == current_user %>
+  <% if @can_delete %>
     <%=button_to t('uploaded_files.show.delete'), { :action => "destroy", :id => @uploaded_file.id },
     data: {confirm: t('uploaded_files.show.delete_confirm')}, method: :delete, class: 'button is-danger'%>
   <% end%>

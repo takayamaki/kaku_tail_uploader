@@ -54,6 +54,7 @@ class UploadedFilesController < ApplicationController
       @uploaded_file = current_user.uploaded_file
     end
     not_found unless @uploaded_file.present?
+    @can_delete = show_delete_button?
   end
 
   private
@@ -68,5 +69,14 @@ class UploadedFilesController < ApplicationController
 
   def check_able_to_upload
     forbidden if Config.can_upload == "0"
+  end
+
+  def show_delete_button?
+    can_upload = Config.can_upload == "1"
+
+    return true if current_user.admin_role?
+    return true if @uploaded_file.user == current_user && current_user.staff?
+    return true if @uploaded_file.user == current_user && can_upload
+    return false
   end
 end
