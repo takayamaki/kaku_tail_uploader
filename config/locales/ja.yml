@@ -14,6 +14,9 @@ ja:
       file_already_exists_warning: 一つのアカウントで提出できる動画は一つまでです
       upload_form: アップロードする
       view_all_files: 絞り込みを解除する
+    units:
+      seconds: 秒
+      frames: フレーム
     new:
       upload: アップロード
       select_file: ファイル選択
@@ -25,9 +28,9 @@ ja:
       file_name: ファイル名
       upload_user: アップロードしたユーザ
       thumbnail: サムネイル
-      15sec: 予選プレビューの始点
-      30sec: 本戦プレビューの始点
-      60sec: 決勝プレビューの始点
+      start_of_15sec: 予選プレビュー
+      start_of_30sec: 本戦プレビュー
+      start_of_60sec: 決勝プレビュー
       summary_for_frame: フレーム数で指定する(任意入力、クリックすると開きます)
       comment: 備考
     show:
@@ -37,12 +40,6 @@ ja:
       delete: 削除する
       delete_confirm: 本当に削除しますか？
       file_size: ファイルサイズ
-      thumbnail: サムネイル
-      15sec: 予選
-      30sec: 本戦
-      60sec: 決勝
-      by_sec: 秒数
-      by_frame: フレーム数
   staff_only:
     index:
       title: ユーザ一覧

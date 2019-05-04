@@ -1,49 +1,48 @@
 <div class="container">
   <table class='table is-fullwidth is-striped'>
     <tr>
-      <th><%= t('uploaded_files.shared.file_name')%></th>
+      <th colspan="2"><%= t('uploaded_files.shared.file_name') %></th>
       <td><%= @uploaded_file.file_name %></td>
     </tr>
     <tr>
-      <th><%= t('uploaded_files.shared.created_at')%></th>
-      <td><%= I18n.l(@uploaded_file.created_at) %></td>
+      <th colspan="2"><%= t('uploaded_files.shared.created_at') %></th>
+      <td><%= l(@uploaded_file.created_at) %></td>
     </tr>
     <tr>
-      <th><%= t('uploaded_files.show.timepoints')%></th>
+      <th rowspan="4"><%= t('uploaded_files.show.timepoints') %></th>
+      <th><%= t('uploaded_files.shared.thumbnail') %></th>
       <td>
-        <table>
-          <tr>
-            <th><%= t('uploaded_files.show.method')%></th>
-            <th><%= t('uploaded_files.show.thumbnail')%></th>
-            <th><%= t('uploaded_files.show.15sec')%></th>
-            <th><%= t('uploaded_files.show.30sec')%></th>
-            <th><%= t('uploaded_files.show.60sec')%></th>
-          </tr>
-          <tr>
-            <td><%= t('uploaded_files.show.by_sec')%></td>
-            <td><%= @uploaded_file.thumbnail%></td>
-            <td><%= @uploaded_file.start_of_15sec%></td>
-            <td><%= @uploaded_file.start_of_30sec%></td>
-            <td><%= @uploaded_file.start_of_60sec%></td>
-          </tr>
-          <% if @uploaded_file.start_of_15sec_by_frame.present? %>
-            <tr>
-            <td><%= t('uploaded_files.show.by_frame')%></td>
-            <td><%= @uploaded_file.thumbnail_by_frame%></td>
-            <td><%= @uploaded_file.start_of_15sec_by_frame%></td>
-            <td><%= @uploaded_file.start_of_30sec_by_frame%></td>
-            <td><%= @uploaded_file.start_of_60sec_by_frame%></td>
-            </tr>
-          <%end%>
-        </table>
+        <%= @uploaded_file.thumbnail_sec_part %><%= t('uploaded_files.units.seconds') %>
+        <%= @uploaded_file.thumbnail_frame_part %><%= t('uploaded_files.units.frames') %>
       </td>
     </tr>
     <tr>
-      <th><%= t('uploaded_files.shared.upload_user')%></th>
+      <th><%= t('uploaded_files.shared.start_of_15sec') %></th>
+      <td>
+        <%= @uploaded_file.start_of_15sec_sec_part %><%= t('uploaded_files.units.seconds') %>
+        <%= @uploaded_file.start_of_15sec_frame_part %><%= t('uploaded_files.units.frames') %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('uploaded_files.shared.start_of_30sec') %></th>
+      <td>
+        <%= @uploaded_file.start_of_30sec_sec_part %><%= t('uploaded_files.units.seconds') %>
+        <%= @uploaded_file.start_of_30sec_frame_part %><%= t('uploaded_files.units.frames') %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= t('uploaded_files.shared.start_of_60sec') %></th>
+      <td>
+        <%= @uploaded_file.start_of_60sec_sec_part %><%= t('uploaded_files.units.seconds') %>
+        <%= @uploaded_file.start_of_60sec_frame_part %><%= t('uploaded_files.units.frames') %>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2"><%= t('uploaded_files.shared.upload_user') %></th>
       <td><%= @uploaded_file.user.name %></td>
     </tr>
     <tr>
-      <th><%= t('uploaded_files.show.file_size')%></th>
+      <th colspan="2"><%= t('uploaded_files.show.file_size') %></th>
       <td><%= @uploaded_file.file_size_by_megabytes %>MB (<%= @uploaded_file.file.size %>Byte)</td>
     </tr>
   </table>
