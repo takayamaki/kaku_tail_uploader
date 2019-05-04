@@ -3,7 +3,6 @@ class UploadedFilesController < ApplicationController
   before_action :check_able_to_upload, only: [:new]
 
   def index
-    @can_upload = Config.can_upload == "1"
     if current_user.staff?
       @uploaded_files = UploadedFile.all
       @uploaded_files = @uploaded_files.by_upload_user_id(params[:user_id]) if params[:user_id]
@@ -12,6 +11,12 @@ class UploadedFilesController < ApplicationController
     end
 
     @uploaded_files = @uploaded_files.reverse_order.page(params[:page])
+
+    if Config.can_upload != "1"
+      @message = I18n.t('uploaded_files.index.out_of_submission_period_warning')
+    elsif current_user.uploaded_file.present?
+      @message = I18n.t('uploaded_files.index.file_already_exists_warning')
+    end
   end
 
   def new

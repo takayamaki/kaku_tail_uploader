@@ -12,6 +12,7 @@ ja:
     index:
       require_name: 表示名を登録してください
       file_already_exists_warning: 一つのアカウントで提出できる動画は一つまでです
+      out_of_submission_period_warning: 動画提出期間外のため、動画の提出を受け付けていません
       upload_form: アップロードする
       view_all_files: 絞り込みを解除する
     units:
