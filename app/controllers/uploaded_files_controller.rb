@@ -68,7 +68,7 @@ class UploadedFilesController < ApplicationController
   end
 
   def check_able_to_upload
-    forbidden if Config.can_upload == "0"
+    forbidden if Config.can_upload == "0" && !current_user.staff?
   end
 
   def show_delete_button?
