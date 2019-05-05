@@ -23,6 +23,8 @@ gem 'rails-i18n'
 gem 'kaminari'
 gem 'rails-settings-cached'
 
+gem 'google_drive'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop'
