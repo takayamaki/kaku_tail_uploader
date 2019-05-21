@@ -5,4 +5,3 @@ SpreadSheetExportor.instance.credentials = Google::Auth::UserRefreshCredentials.
   scope:         'https://www.googleapis.com/auth/drive.file',
   redirect_uri:  'urn:ietf:wg:oauth:2.0:oob',
 )
-SpreadSheetExportor.instance.get_or_create_session
