@@ -3,9 +3,10 @@ require 'singleton'
 
 class SpreadSheetExportor
   include Singleton
-  attr_writer :credentials
+  attr_writer :credentials, :defaultSpreadSheetName
 
-  def get_or_create_worksheet(spreadSheetName, workSheetName)
+  def get_or_create_worksheet(workSheetName, spreadSheetName = @defaultSpreadSheetName.to_s)
+    raise 'Set defaultSpreadSheetName!!' unless @defaultSpreadSheetName
     spreadsheet = get_or_create_spreadsheet(spreadSheetName)
     @workSheets ||= {}
     @workSheets["#{spreadSheetName}/#{workSheetName}"] ||=
