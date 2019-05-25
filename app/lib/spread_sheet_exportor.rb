@@ -36,9 +36,9 @@ class SpreadSheetExportor
     sheet.save
   end
 
-  def erase_uploaded_file_info(file)
+  def erase_uploaded_file_info(user_id)
     sheet = get_or_create_worksheet('提出作品情報')
-    sheet.update_cells(file.user_id+1, 3, [[
+    sheet.update_cells(user_id+1, 3, [[
       "",
       "",
       "",

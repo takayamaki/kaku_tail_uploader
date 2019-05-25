@@ -63,10 +63,10 @@ class UploadedFile < ApplicationRecord
 
   private
   def export_to_spread_sheet
-    SpreadSheetExportor.instance.export_uploaded_file_info(self)
+    ExportUploadedFileInfoJob.perform_later(id)
   end
 
   def erase_from_spread_sheet
-    SpreadSheetExportor.instance.erase_uploaded_file_info(self)
+    EraseUploadedFileInfoJob.perform_later(user_id)
   end
 end

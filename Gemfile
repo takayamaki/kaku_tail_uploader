@@ -24,6 +24,7 @@ gem 'kaminari'
 gem 'rails-settings-cached'
 
 gem 'google_drive'
+gem "sucker_punch", "~> 2.1"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
