@@ -64,7 +64,7 @@ class SpreadSheetExportor
 
   private
   def create_session
-    GoogleDrive::Session.new_dummy if Rails.env.test?
+    return GoogleDrive::Session.new_dummy if Rails.env.test?
     @credentials.fetch_access_token!
     GoogleDrive::Session.from_credentials(@credentials)
   end
