@@ -41,8 +41,8 @@ class UploadedFile < ApplicationRecord
   scope :by_upload_user_id, ->(user_id) {where(user_id: user_id)}
   paginates_per 20
 
-  after_save :export_to_spread_sheet
-  after_destroy :erase_from_spread_sheet
+  after_save :export_to_spread_sheet unless Rails.env.test?
+  after_destroy :erase_from_spread_sheet unless Rails.env.test?
 
   def file_size_by_megabytes
     format("%.2f", file.size.to_f / 1024 ** 2)
