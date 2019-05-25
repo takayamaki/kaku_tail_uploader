@@ -36,6 +36,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'letter_opener_web', github: 'fgrehm/letter_opener_web', ref: 'd6c6455'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
