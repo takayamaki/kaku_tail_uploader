@@ -3,6 +3,7 @@ require 'singleton'
 
 class SpreadSheetExportor
   include Singleton
+  include Rails.application.routes.url_helpers
 
   def initialize
     @credentials = Google::Auth::UserRefreshCredentials.new(
@@ -13,6 +14,44 @@ class SpreadSheetExportor
       redirect_uri:  'urn:ietf:wg:oauth:2.0:oob',
     )
     @defaultSpreadSheetName = Config.defaultSpreadSheetName
+  end
+
+  def export_uploaded_file_info(file)
+    sheet = get_or_create_worksheet('提出作品情報')
+    sheet.update_cells(file.user_id+1, 1, [[
+      file.user_id,
+      file.user.name,
+      I18n.l(file.created_at),
+      file.file_name,
+      file.thumbnail_sec_part,
+      file.thumbnail_frame_part,
+      file.start_of_15sec_sec_part,
+      file.start_of_15sec_frame_part,
+      file.start_of_30sec_sec_part,
+      file.start_of_30sec_frame_part,
+      file.start_of_60sec_sec_part,
+      file.start_of_60sec_frame_part,
+      "http://#{ENV.fetch('DOMAIN_NAME'){'localhost:3000'}}#{uploaded_file_path(file)}",
+    ]])
+    sheet.save
+  end
+
+  def erase_uploaded_file_info(file)
+    sheet = get_or_create_worksheet('提出作品情報')
+    sheet.update_cells(file.user_id+1, 3, [[
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]])
+    sheet.save
   end
 
   def get_or_create_worksheet(workSheetName, spreadSheetName = @defaultSpreadSheetName.to_s)

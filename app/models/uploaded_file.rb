@@ -41,6 +41,9 @@ class UploadedFile < ApplicationRecord
   scope :by_upload_user_id, ->(user_id) {where(user_id: user_id)}
   paginates_per 20
 
+  after_save :export_to_spread_sheet
+  after_destroy :erase_from_spread_sheet
+
   def file_size_by_megabytes
     format("%.2f", file.size.to_f / 1024 ** 2)
   end
@@ -56,5 +59,14 @@ class UploadedFile < ApplicationRecord
   end
   def start_of_60sec_by_frame
     start_of_60sec_sec_part*30 + start_of_60sec_frame_part
+  end
+
+  private
+  def export_to_spread_sheet
+    SpreadSheetExportor.instance.export_uploaded_file_info(self)
+  end
+
+  def erase_from_spread_sheet
+    SpreadSheetExportor.instance.erase_uploaded_file_info(self)
   end
 end
