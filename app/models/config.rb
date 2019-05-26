@@ -17,5 +17,5 @@
 
 # RailsSettings Model
 class Config < RailsSettings::Base
-  source Rails.root.join("config/app.yml")
+  source Rails.root.join("config/default_config.yml")
 end

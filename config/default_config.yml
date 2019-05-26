@@ -1,6 +1,7 @@
-# config/app.yml for rails-settings-cached
+# config/default_config.yml for rails-settings-cached
 defaults: &defaults
   can_upload: true
+  can_signup: true
   google_drive_client_id: <%= ENV.fetch('GOOGLE_DRIVE_CLIENT_ID') %>
   google_drive_client_secret: <%= ENV.fetch('GOOGLE_DRIVE_CLIENT_SECRET') %>
   google_drive_refresh_token: <%= ENV.fetch('GOOGLE_DRIVE_REFRESH_TOKEN') %>
