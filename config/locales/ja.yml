@@ -23,17 +23,20 @@ ja:
       select_file: ファイル選択
       size_limit: 5GB(5,000,000,000バイト)までのサイズのファイルをアップロードできます。
       error_not_include: "%{longer}に%{shorter}が含まれていません"
+      thumbnail: サムネイル フレーム指定（予選15秒エリアの中の一画面を選んでください）
+      start_of_15sec: 予選（15秒エリア）開始フレーム指定
+      start_of_30sec: 本選（30秒エリア）開始フレーム指定
+      start_of_60sec: 決勝戦（60秒エリア）開始フレーム指定
     shared:
       created_at: アップロード日時
       file_name: ファイル名
       upload_user: アップロードしたユーザ
+      comment: 備考
+    show:
       thumbnail: サムネイル
       start_of_15sec: 予選プレビュー
       start_of_30sec: 本戦プレビュー
       start_of_60sec: 決勝プレビュー
-      summary_for_frame: フレーム数で指定する(任意入力、クリックすると開きます)
-      comment: 備考
-    show:
       timepoints: 指定した始点
       method: 表記
       download: ダウンロード
