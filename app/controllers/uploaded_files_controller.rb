@@ -20,8 +20,12 @@ class UploadedFilesController < ApplicationController
   end
 
   def new
-    @uploaded_file = current_user.build_uploaded_file
-    render layout: 'layouts/upload_form'
+    if current_user.uploaded_file.present?
+      redirect_to current_user.uploaded_file
+    else
+      @uploaded_file = current_user.build_uploaded_file
+      render layout: 'layouts/upload_form'
+    end
   end
 
 
