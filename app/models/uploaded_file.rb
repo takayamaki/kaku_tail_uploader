@@ -30,11 +30,12 @@
 class UploadedFile < ApplicationRecord
   include FileUploader[:file]
   validates :file_name, :file_data, presence: true
-  validates :thumbnail_sec_part, :thumbnail_frame_part,
-            :start_of_15sec_sec_part, :start_of_15sec_frame_part,
-            :start_of_30sec_sec_part, :start_of_30sec_frame_part,
-            :start_of_60sec_sec_part, :start_of_60sec_frame_part,
-            numericality: { only_integer: true }
+  validates :thumbnail_sec_part, :start_of_15sec_sec_part,
+            :start_of_30sec_sec_part, :start_of_60sec_sec_part,
+            numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :thumbnail_frame_part, :start_of_15sec_frame_part,
+            :start_of_30sec_frame_part, :start_of_60sec_frame_part,
+            numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 29 }
   validates_with PreviewPointValidator
 
   belongs_to :user
