@@ -35,6 +35,8 @@ class User < ApplicationRecord
   scope :role_by, ->(role) {where(role: role)}
   paginates_per 20
 
+  after_save :update_username unless Rails.env.test?
+
   def staff?
     ['admin', 'organizer', 'staff'].include? role
   end
@@ -45,5 +47,10 @@ class User < ApplicationRecord
 
   def downgrade_role
     update! role: ([role_before_type_cast - 1, 0].max)
+  end
+
+  private
+  def update_username
+    UpdateUsernameJob.perform_later(id)
   end
 end

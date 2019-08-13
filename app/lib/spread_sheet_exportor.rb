@@ -16,6 +16,13 @@ class SpreadSheetExportor
     @defaultSpreadSheetName = Config.defaultSpreadSheetName
   end
 
+  def update_username(user)
+    sheet = get_or_create_worksheet('提出作品情報')
+    sheet[user.id+1, 1] = user.id
+    sheet[user.id+1, 2] = user.name
+    sheet.save
+  end
+
   def export_uploaded_file_info(file)
     sheet = get_or_create_worksheet('提出作品情報')
     sheet.update_cells(file.user_id+1, 1, [[
